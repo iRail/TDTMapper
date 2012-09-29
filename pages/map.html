@@ -1,22 +1,26 @@
-    <div id="main-container">
-      <div id="main" class="wrapper clearfix">
-        <article>
-          <header>
-            <h1>Map</h1>
-            <p>Use the selector to show different datasets on the map.</p>
-          </header>
-          <section>
-            <div id="datasetboxes">
-              <?php
-                 foreach($data->resources as $url){
-                     $parking = explode("/",$url);
-                     $parking = $parking[sizeof($parking)-1];
-                     echo '<input type="radio" id="'.$parking.'" name="datasets" value="'.$url.'">'.$parking.'</input><br/>' . "\n";
-                 }
-              ?>
-            </div>
-            <iframe id="frame" src="" height="400px" width="90%"></iframe>
-          </section>
-        </article>
-      </div> <!-- #main -->
-    </div> <!-- #main-container -->
+<div id="main-container">
+  <div id="main" class="wrapper clearfix">
+    <article>
+      <header>
+        <h1>Map</h1>
+      </header>
+      <section>
+        <div id="datasetboxes">
+          <?php
+             foreach($data->resources as $url){
+                 $parking = explode("/",$url);
+                 $parking = $parking[sizeof($parking)-1];
+                 echo '<input type="radio" id="'.$parking.'" name="datasets" value="'.$url.'">'.$parking.'</input><br/>' . "\n";
+             }
+          ?>
+        </div>
+        <iframe id="frame" src="" height="400px" width="100%"></iframe>
+      </section>
+    </article>
+    <aside>
+      <h3 id="asidetitle">Click on a city</h3>
+      <p id="explanation">When you will click on a city name, information about all parkings will show up here.</p>
+    </aside>
+
+  </div> <!-- #main -->
+</div> <!-- #main-container -->
