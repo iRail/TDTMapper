@@ -16,7 +16,7 @@ $('#btn').click(function(){
         password: "aaaaaa",
         data: "resource_type=generic&generic_type=ITSPS&documentation=Parking%20information%20for%20" + encodeURI($("#name").val()) + "&uri=" + encodeURI($("#URL").val()),
         method: "PUT",
-        type: "POST",
+        type: "PUT",
         error: function(){
             $("#feedback").html("Sorry, I've done something wrong. As this is a proof of concept, please ask someone for help.");
         }
