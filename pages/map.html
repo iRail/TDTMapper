@@ -1,17 +1,22 @@
     <div id="main-container">
       <div id="main" class="wrapper clearfix">
-	<article>
-	  <header>
-	    <h1>Map</h1>
-	    <p>Use the selector to show different datasets on the map.</p>
-	  </header>
-	  <section>
+        <article>
+          <header>
+            <h1>Map</h1>
+            <p>Use the selector to show different datasets on the map.</p>
+          </header>
+          <section>
             <div id="datasetboxes">
-              <input type="checkbox" id="gent" name="datasets" value="Gent" onClick="showGent();">Gent<br/>
+              <?php
+                 foreach($data->resources as $url){
+                     $parking = explode("/",$url);
+                     $parking = $parking[sizeof($parking)-1];
+                     echo '<input type="radio" id="'.$parking.'" name="datasets" value="'.$url.'">'.$parking.'</input><br/>' . "\n";
+                 }
+              ?>
             </div>
-            <div id="map" style="height: 300px; width: 90%;">
-            </div>
-	  </section>
+            <iframe id="frame" src="" height="400px" width="90%"></iframe>
+          </section>
         </article>
       </div> <!-- #main -->
     </div> <!-- #main-container -->

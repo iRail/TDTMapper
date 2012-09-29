@@ -29,8 +29,8 @@ function __autoload($class){
 //map urls to a classname
 $urls = array(
     "/" => "Index",
-    "/add/" => "AddForm",
-    "/map/" => "Map",
+    "/add/?" => "AddForm",
+    "/map/?" => "Map",
     "/(.+)" => "AController"
 );
 

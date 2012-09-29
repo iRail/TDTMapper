@@ -2,7 +2,10 @@
 class Map extends AController{
     function GET($matches){
         include_once("pages/header.html");
-        include_once("pages/map.html");
+        $loc = "http://park.iRail.be/data/Parking.json";
+        $data = HTTP::request($loc);
+        $data = json_decode($data->data);
+        include("pages/map.html");
         include_once("pages/footer.html");  
     }
 

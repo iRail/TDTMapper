@@ -24,6 +24,7 @@ abstract class Cache{
     public static function getInstance(){
         if(!isset(self::$instance)){
             $cacheclass = "Cache".Config::$CACHE_SYSTEM;
+            include_once("tools/cache/" . $cacheclass . ".class.php");
             self::$instance = new $cacheclass();
         }
         return self::$instance;

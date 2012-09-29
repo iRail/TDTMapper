@@ -18,7 +18,7 @@ class CacheMemCached extends Cache{
          * In memcache, the old but stable implementation in PHP of memcached the persistent connection works like charm
          * In memcached however there is a severe bug which leads to a memory leak. If you'd take over code from this class to implement memcached, DON'T use the persistent connect!
          */
-        if(!$this->memcache->pconnect(Config::$CACHE_HOST, Config::$CACHE_PORT)){
+        if(!$this->memcache->pconnect("localhost", 11211)){
             throw new CacheException("could not connect");
         }
     }
